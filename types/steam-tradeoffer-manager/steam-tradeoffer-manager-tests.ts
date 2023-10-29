@@ -16,6 +16,7 @@ const item2 = {
     appid: 1234,
     contextid: 1234,
     assetid: "1234",
+    market_hash_name: 'Mann Co. Supply Crate Key'
 };
 
 // ----- TradeOfferManager -----

@@ -3,9 +3,7 @@ import SteamID = require("steamid");
 import CEconItem = require("steamcommunity/classes/CEconItem");
 import { appid, assetid, contextid } from "steamcommunity";
 
-interface BaseItem {
-    appid: appid;
-    contextid: contextid;
+interface BaseItem extends CEconItem {
     amount?: number | undefined;
 }
 
@@ -66,13 +64,13 @@ declare class TradeOffer {
      * An array of items to be given from your account should this offer be accepted
      * - If this offer has not yet been sent or was just sent, object in this array will not contain `classid` or `instanceid` properties, as it would had you loaded a sent offer
      */
-    readonly itemsToGive: Array<Item | CEconItem>;
+    readonly itemsToGive: Item[];
 
     /**
      * An array of items to be given from the other account and received by yours should this offer be accepted
      * - If this offer has not yet been sent or was just sent, object in this array will not contain `classid` or `instanceid` properties, as it would had you loaded a sent offer
      */
-    readonly itemsToReceive: Array<Item | CEconItem>;
+    readonly itemsToReceive: Item[];
 
     /**
      * `true` if this offer was sent by you, `false` if you received it
